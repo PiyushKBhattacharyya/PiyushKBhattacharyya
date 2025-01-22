@@ -12,7 +12,7 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 ### **Languages & Frameworks**
 - **Python, Java, JavaScript**
 - **TensorFlow, PyTorch, OpenCV, FastAPI**
-- **Android Development (Kotlin, Java, Jetpack Compose)**
+- **Android Development**
 
 ### **Tools & Platforms**
 - **Suricata, Zeek, Filebeat**
