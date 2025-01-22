@@ -1,0 +1,37 @@
+{
+    "projects": [
+        {
+            "title": "Multiclass Arrhythmia Detection using 1D-CNN-BiLSTM",
+            "bodyText": "- A deep learning model using a 1D-CNN-BiLSTM architecture for multiclass arrhythmia detection.\n- Focuses on ECG data for arrhythmia classification.\n- Achieved high accuracy and optimized for healthcare applications.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/PiyushKBhattacharyya/arrthymia-study"
+                }
+            ],
+            "tags": [
+                "1D-CNN",
+                "BiLSTM",
+                "ECG",
+                "Healthcare",
+                "Deep Learning"
+            ]
+        },
+        {
+            "title": "Brain-Tumor-Segmentation using UNet",
+            "bodyText": "- Implemented brain tumor segmentation using the UNet architecture.\n- Utilizes deep learning for medical image segmentation.\n- Focused on MRI scans for tumor detection and classification.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/PiyushKBhattacharyya/Brain-Tumor-Segmentatiom"
+                }
+            ],
+            "tags": [
+                "UNet",
+                "Segmentation",
+                "Medical Imaging",
+                "Deep Learning"
+            ]
+        }
+    ]
+}

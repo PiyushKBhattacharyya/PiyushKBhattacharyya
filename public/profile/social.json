@@ -1,0 +1,16 @@
+{
+    "social": [
+        {
+            "network" : "linkedin",
+            "href": "https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/"
+        },
+        {
+            "network" : "github",
+            "href": "https://github.com/PiyushKBhattacharyya"
+        },
+        {
+            "network" : "email",
+            "href": "mailto:piyushbhattacharyya@gmail.com"
+        }
+    ]
+}

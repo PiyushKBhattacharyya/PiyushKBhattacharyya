@@ -1,0 +1,32 @@
+{
+    "experiences": [
+        {
+            "title": "AIOT Research Intern",
+            "subtitle": "NIELIT-India",
+            "workType": "Internship",
+            "workDescription": [
+                "Completed an Academic Internship at the National Institute of Electronics and Information Technology (NIELIT),", 
+                "Key Highlights:",
+                "\tSpecialized in the domain of Artificial Intelligence of Things (AIoT).",
+                "Worked on two mini-projects:",
+                "\tHeart Disease Prediction using a MultiLayer Perceptron Model.",
+                "\tMulticlass Arrhythmia Detection using a 1D-CNN-BiLSTM Model."
+            ],
+            "dateText": "13/05/2024 – 28/06/2024"
+        },
+        {
+            "title": "App Developer Apprenticeship",
+            "subtitle": "NIC-India",
+            "workType": "Apprenticeship",
+            "workDescription": [
+                "Completed a six-week training program on Android App Development organized by the National Informatics Centre (NIC), Assam State Centre", 
+                "The training encompassed: ",
+                "\tBuilding user interfaces for Android applications.",
+                "\tImplementing functionalities to enhance app features.",
+                "\tDeveloping a face recognition module for user authentication.",
+                "\tCreating a Student Information System using PHP, MySQL, and REST APIs."
+            ],
+            "dateText": "24/06/2023 – 24/07/2023"
+        }
+    ]
+}

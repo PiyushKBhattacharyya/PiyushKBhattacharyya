@@ -4,9 +4,9 @@
 I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learning, ML, and IoT. My work spans multiple domains, including **ECG analysis, Face Recognition, and network intrusion detection systems.**
 
 ## 💡 Projects
-- **Multiclass Arrhythmia Detection**📊
-- **Brain-Tumor-Segmentatiom**
-- **Signature-based Network Intrusion Detection System**🔐
+- **Multiclass Arrhythmia Detection** using 1D-CNN-BiLSTM 📊
+- **Brain-Tumor-Segmentatiom** using UNet
+- **Signature-based Network Intrusion Detection System** with Suricata & Zeek 🔐
 
 ## 🛠️ Tech Stack
 ### **Languages & Frameworks**
