@@ -21,7 +21,7 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 - **AMD GPU Optimization for AI Training**
 
 ## 📫 Get in Touch
-- **LinkedIn**: [Piyush Kaushik Bhattacharyya]([https://www.linkedin.com/in/piyush-kbhattacharyya/](https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/))
+- **LinkedIn**: [Piyush Kaushik Bhattacharyya](https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/))
 - **Email**: piyushbhattacharyya@gmail.com
 
 💙 **Let's connect and build something awesome together!** 🚀
