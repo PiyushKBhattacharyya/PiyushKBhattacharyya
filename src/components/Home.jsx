@@ -23,9 +23,17 @@ const styles = {
   },
   typewriterContainer: {
     display: 'flex',
-    flexDirection: 'row',  // Ensure text stays on the same row
-    alignItems: 'center',   // Align text vertically in the middle
-    justifyContent: 'center', // Center the elements horizontally
+    flexDirection: 'row', // Ensure "I'm" and Typewriter are on the same line
+    alignItems: 'center',  // Align vertically at the center
+    justifyContent: 'center', // Center horizontally
+  },
+  typewriterText: {
+    fontSize: '2.5em', // Adjust Typewriter font size for better alignment with "I'm"
+    lineHeight: '1',    // Remove any unwanted spacing between lines
+  },
+  inlineText: {
+    fontSize: '2.5em', // Match "I'm" size with the Typewriter
+    lineHeight: '1',   // Remove any unwanted spacing between lines
   },
 };
 
@@ -50,13 +58,14 @@ function Home() {
         </h1>
 
         <div style={styles.typewriterContainer}>
-          <h2 style={styles.inlineChild}>I&apos;m&nbsp;</h2>
+          <h2 style={styles.inlineText}>I&apos;m&nbsp;</h2>
           <Typewriter
             options={{
               loop: true,
               autoStart: true,
               strings: data?.roles,
             }}
+            style={styles.typewriterText}
           />
         </div>
 

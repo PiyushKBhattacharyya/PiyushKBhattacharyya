@@ -110,6 +110,12 @@ function Experience({ header }) {
           font-size: 1.5em;
         }
 
+        .timeline-date {
+          white-space: normal; /* Allow date to wrap properly */
+          word-wrap: break-word; /* Ensure long dates don't overflow */
+          font-size: 1em; /* Adjust font size to avoid truncation */
+        }
+
         @media (max-width: 768px) {
           .section-content-container {
             width: 90vw;
@@ -122,6 +128,10 @@ function Experience({ header }) {
 
           ul {
             padding-left: 15px;
+          }
+
+          .timeline-date {
+            font-size: 0.9em; /* Smaller font size on mobile */
           }
         }
       `}</style>
