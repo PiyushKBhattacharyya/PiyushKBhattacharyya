@@ -17,26 +17,33 @@ function Education(props) {
   const [mode, setMode] = useState('VERTICAL_ALTERNATING');
 
   useEffect(() => {
-    fetch(endpoints.education, {
-      method: 'GET',
-    })
+    fetch(endpoints.education, { method: 'GET' })
       .then((res) => res.json())
       .then((res) => setData(res))
-      .catch((err) => err);
+      .catch((err) => console.error(err));
 
-    if (window?.innerWidth < 576) {
-      setMode('VERTICAL');
-    }
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
 
-    if (window?.innerWidth < 576) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 576 && window?.innerWidth < 768) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 768 && window?.innerWidth < 1024) {
-      setWidth('75vw');
-    } else {
-      setWidth('50vw');
-    }
+      if (screenWidth < 576) {
+        setMode('VERTICAL');
+        setWidth('90vw');
+      } else if (screenWidth >= 576 && screenWidth < 768) {
+        setMode('VERTICAL_ALTERNATING');
+        setWidth('90vw');
+      } else if (screenWidth >= 768 && screenWidth < 1024) {
+        setMode('VERTICAL_ALTERNATING');
+        setWidth('75vw');
+      } else {
+        setMode('VERTICAL_ALTERNATING');
+        setWidth('50vw');
+      }
+    };
+
+    handleResize(); // Run on mount
+    window.addEventListener('resize', handleResize); // Listen to window resize
+
+    return () => window.removeEventListener('resize', handleResize); // Cleanup on unmount
   }, []);
 
   return (
@@ -62,19 +69,48 @@ function Education(props) {
                 }}
               >
                 <div className="chrono-icons">
-                  {data.education.map((education) => (education.icon ? (
-                    <img
-                      key={education.icon.src}
-                      src={education.icon.src}
-                      alt={education.icon.alt}
-                    />
-                  ) : null))}
+                  {data.education.map((education) =>
+                    education.icon ? (
+                      <img
+                        key={education.icon.src}
+                        src={education.icon.src}
+                        alt={education.icon.alt}
+                        className="education-icon"
+                      />
+                    ) : null
+                  )}
                 </div>
               </Chrono>
             </Container>
           </div>
         </Fade>
-      ) : <FallbackSpinner /> }
+      ) : (
+        <FallbackSpinner />
+      )}
+
+      {/* Additional CSS for better responsiveness */}
+      <style jsx>{`
+        .section-content-container {
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 10px;
+        }
+
+        .education-icon {
+          max-width: 50px;
+          height: auto;
+        }
+
+        @media (max-width: 576px) {
+          .section-content-container {
+            width: 95vw;
+          }
+
+          .education-icon {
+            max-width: 40px;
+          }
+        }
+      `}</style>
     </>
   );
 }

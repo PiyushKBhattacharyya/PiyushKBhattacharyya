@@ -7,7 +7,7 @@ import FallbackSpinner from './FallbackSpinner';
 
 const styles = {
   nameStyle: {
-    fontSize: '5em',
+    fontSize: '5em', // Default size for desktop
   },
   inlineChild: {
     display: 'inline-block',
@@ -18,6 +18,14 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    textAlign: 'center', // Ensure everything is centered on all screens
+    padding: '20px', // Add padding for mobile
+  },
+  typewriterContainer: {
+    display: 'flex',
+    flexDirection: 'row',  // Ensure text stays on the same row
+    alignItems: 'center',   // Align text vertically in the middle
+    justifyContent: 'center', // Center the elements horizontally
   },
 };
 
@@ -36,8 +44,12 @@ function Home() {
   return data ? (
     <Fade>
       <div style={styles.mainContainer}>
-        <h1 style={styles.nameStyle}>{data?.name}</h1>
-        <div style={{ flexDirection: 'row' }}>
+        {/* Adjust the name size based on screen width */}
+        <h1 style={{ ...styles.nameStyle, fontSize: window.innerWidth < 768 ? '3em' : '5em' }}>
+          {data?.name}
+        </h1>
+
+        <div style={styles.typewriterContainer}>
           <h2 style={styles.inlineChild}>I&apos;m&nbsp;</h2>
           <Typewriter
             options={{
@@ -47,6 +59,7 @@ function Home() {
             }}
           />
         </div>
+
         <Social />
       </div>
     </Fade>
