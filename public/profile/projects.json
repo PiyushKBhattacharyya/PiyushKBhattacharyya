@@ -23,7 +23,7 @@
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/PiyushKBhattacharyya/Brain-Tumor-Segmentatiom"
+                    "href": "https://github.com/PiyushKBhattacharyya/Brain-Tumor-Segmentation"
                 }
             ],
             "tags": [
@@ -31,6 +31,26 @@
                 "Segmentation",
                 "Medical Imaging",
                 "Deep Learning"
+            ]
+        },
+        {
+            "title": "Hand Pose Detection",
+            "bodyText": "- Designed a Hand Pose Detection System.\n- Utlized MediaPipe Hands along with Inegration with TensorFlow.js's hand-pose-detection API.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/PiyushKBhattacharyya/hand-pose-detection"
+                },
+                {
+                    "text": "Live Demo",
+                    "href": "https://hand-pose-detection-ovw9dfkw5.vercel.app/"
+                }
+            ],
+            "tags": [
+                "Hand Pose Detection",
+                "OpenCV",
+                "MediaPipe",
+                "Tensorflow.js"
             ]
         }
     ]
