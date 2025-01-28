@@ -8,6 +8,10 @@ import FallbackSpinner from './FallbackSpinner';
 const styles = {
   nameStyle: {
     fontSize: '5em', // Default size for desktop
+    transition: 'text-shadow 0.3s ease-in-out', // Smooth transition for the glow effect
+  },
+  nameGlowStyle: {
+    textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)',
   },
   inlineChild: {
     display: 'inline-block',
@@ -53,7 +57,15 @@ function Home() {
     <Fade>
       <div style={styles.mainContainer}>
         {/* Adjust the name size based on screen width */}
-        <h1 style={{ ...styles.nameStyle, fontSize: window.innerWidth < 768 ? '3em' : '5em' }}>
+        <h1
+          style={{
+            ...styles.nameStyle,
+            fontSize: window.innerWidth < 768 ? '3em' : '5em',
+            ...(data?.name ? styles.nameGlowStyle : {}),
+          }}
+          onMouseEnter={(e) => e.target.style.textShadow = styles.nameGlowStyle.textShadow}
+          onMouseLeave={(e) => e.target.style.textShadow = 'none'} // Remove glow on hover out
+        >
           {data?.name}
         </h1>
 
