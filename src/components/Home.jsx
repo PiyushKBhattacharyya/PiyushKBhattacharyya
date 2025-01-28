@@ -5,45 +5,110 @@ import endpoints from '../constants/endpoints';
 import Social from './Social';
 import FallbackSpinner from './FallbackSpinner';
 
+const previewStyles = {
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  transform: 'translate(-50%, -50%) scale(0.2)',  // Shrinks the content for preview
+  zIndex: 999,
+  backgroundColor: '#f7f7f7',
+  padding: '10px',
+  borderRadius: '10px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  maxWidth: '250px', // Max size for the preview box
+  overflow: 'hidden',
+};
+
 const styles = {
-  miniPreview: {
-    position: 'absolute',
-    top: '10px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    border: '1px solid #ccc',
-    padding: '10px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    width: '250px',
-    zIndex: '999',
-    borderRadius: '10px',
+  nameStyle: {
+    fontSize: '5em', // Default size for desktop
+    transition: 'text-shadow 0.3s ease-in-out',
+  },
+  nameGlowStyle: {
+    textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)',
+  },
+  mainContainer: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
-    visibility: 'hidden', // Initially hidden
-  },
-  previewImage: {
-    width: '80px',
-    height: '80px',
-    borderRadius: '50%',
-    objectFit: 'cover',
-    marginTop: '10px',
-  },
-  previewText: {
-    fontSize: '1.2em',
     textAlign: 'center',
+    padding: '20px',
+    position: 'relative',  // For positioning the preview box
   },
-  previewTitle: {
-    fontSize: '1.5em',
-    fontWeight: 'bold',
-    textAlign: 'center',
+  typewriterContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  typewriterText: {
+    fontSize: '2.5em',
+    lineHeight: '1',
+  },
+  inlineText: {
+    fontSize: '2.5em',
+    lineHeight: '1',
   },
 };
 
+function TabContent({ title, roles, children, showPreview, setShowPreview }) {
+  return (
+    <div
+      style={{ ...styles.mainContainer }}
+      onMouseEnter={() => setShowPreview(true)}
+      onMouseLeave={() => setShowPreview(false)}
+    >
+      <h1
+        style={{
+          ...styles.nameStyle,
+          fontSize: window.innerWidth < 768 ? '3em' : '5em',
+          ...(title ? styles.nameGlowStyle : {}),
+        }}
+        onMouseEnter={(e) => e.target.style.textShadow = styles.nameGlowStyle.textShadow}
+        onMouseLeave={(e) => e.target.style.textShadow = 'none'}
+      >
+        {title}
+      </h1>
+
+      <div style={styles.typewriterContainer}>
+        <h2 style={styles.inlineText}>I&apos;m&nbsp;</h2>
+        <Typewriter
+          options={{
+            loop: true,
+            autoStart: true,
+            strings: roles,
+          }}
+          style={styles.typewriterText}
+        />
+      </div>
+
+      {children}
+
+      {/* Live Preview Box */}
+      {showPreview && (
+        <div style={previewStyles}>
+          <h1>{title}</h1>
+          <p>I'm&nbsp;
+            <Typewriter
+              options={{
+                loop: true,
+                autoStart: true,
+                strings: roles,
+              }}
+              style={styles.typewriterText}
+            />
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Home() {
   const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   useEffect(() => {
     fetch(endpoints.home, {
@@ -56,253 +121,16 @@ function Home() {
 
   return data ? (
     <Fade>
-      <div style={{ position: 'relative' }}>
-        {/* Name Section */}
-        <h1
-          style={{ fontSize: '5em' }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {data?.name}
-        </h1>
-
-        {/* Typewriter Effect */}
-        <div>
-          <h2>I'm&nbsp;</h2>
-          <Typewriter
-            options={{
-              loop: true,
-              autoStart: true,
-              strings: data?.roles,
-            }}
-          />
-        </div>
-
-        {/* Miniature Preview */}
-        {isHovered && (
-          <div style={styles.miniPreview}>
-            <div style={styles.previewTitle}>{data?.name}</div>
-            <Typewriter
-              options={{
-                loop: true,
-                autoStart: true,
-                strings: data?.roles,
-              }}
-              style={styles.previewText}
-            />
-            <img
-              src={data?.imageSource}
-              alt="preview-profile"
-              style={styles.previewImage}
-            />
-          </div>
-        )}
-      </div>
+      <TabContent
+        title={data?.name}
+        roles={data?.roles}
+        showPreview={showPreview}
+        setShowPreview={setShowPreview}
+      >
+        <Social />
+      </TabContent>
     </Fade>
   ) : <FallbackSpinner />;
 }
 
-function About() {
-  const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    fetch(endpoints.about, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
-  }, []);
-
-  return data ? (
-    <div style={{ position: 'relative' }}>
-      <h1
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        About Me
-      </h1>
-
-      {/* Miniature Preview */}
-      {isHovered && (
-        <div style={styles.miniPreview}>
-          <div style={styles.previewTitle}>About Me</div>
-          <p style={styles.previewText}>{data?.about}</p>
-          <img
-            src={data?.imageSource}
-            alt="profile-preview"
-            style={styles.previewImage}
-          />
-        </div>
-      )}
-    </div>
-  ) : <FallbackSpinner />;
-}
-
-function Skills() {
-  const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    fetch(endpoints.skills, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
-  }, []);
-
-  return data ? (
-    <div style={{ position: 'relative' }}>
-      <h1
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        Skills
-      </h1>
-
-      {/* Miniature Preview */}
-      {isHovered && (
-        <div style={styles.miniPreview}>
-          <div style={styles.previewTitle}>Skills</div>
-          <p style={styles.previewText}>{data?.skills}</p>
-        </div>
-      )}
-    </div>
-  ) : <FallbackSpinner />;
-}
-
-function Education() {
-  const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    fetch(endpoints.education, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
-  }, []);
-
-  return data ? (
-    <div style={{ position: 'relative' }}>
-      <h1
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        Education
-      </h1>
-
-      {/* Miniature Preview */}
-      {isHovered && (
-        <div style={styles.miniPreview}>
-          <div style={styles.previewTitle}>Education</div>
-          <p style={styles.previewText}>{data?.education}</p>
-        </div>
-      )}
-    </div>
-  ) : <FallbackSpinner />;
-}
-
-function Experience() {
-  const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    fetch(endpoints.experience, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
-  }, []);
-
-  return data ? (
-    <div style={{ position: 'relative' }}>
-      <h1
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        Experience
-      </h1>
-
-      {/* Miniature Preview */}
-      {isHovered && (
-        <div style={styles.miniPreview}>
-          <div style={styles.previewTitle}>Experience</div>
-          <p style={styles.previewText}>{data?.experience}</p>
-        </div>
-      )}
-    </div>
-  ) : <FallbackSpinner />;
-}
-
-function Projects() {
-  const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    fetch(endpoints.projects, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
-  }, []);
-
-  return data ? (
-    <div style={{ position: 'relative' }}>
-      <h1
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        Projects
-      </h1>
-
-      {/* Miniature Preview */}
-      {isHovered && (
-        <div style={styles.miniPreview}>
-          <div style={styles.previewTitle}>Projects</div>
-          <p style={styles.previewText}>{data?.projects}</p>
-        </div>
-      )}
-    </div>
-  ) : <FallbackSpinner />;
-}
-
-function Resume() {
-  const [data, setData] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    fetch(endpoints.resume, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
-  }, []);
-
-  return data ? (
-    <div style={{ position: 'relative' }}>
-      <h1
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        Resume
-      </h1>
-
-      {/* Miniature Preview */}
-      {isHovered && (
-        <div style={styles.miniPreview}>
-          <div style={styles.previewTitle}>Resume</div>
-          <p style={styles.previewText}>{data?.resume}</p>
-        </div>
-      )}
-    </div>
-  ) : <FallbackSpinner />;
-}
-
-export { Home, About, Skills, Education, Experience, Projects, Resume };
+export default Home;
