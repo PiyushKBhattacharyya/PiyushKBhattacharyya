@@ -39,10 +39,39 @@ const styles = {
     fontSize: '2.5em', // Match "I'm" size with the Typewriter
     lineHeight: '1',   // Remove any unwanted spacing between lines
   },
+  miniPreview: {
+    position: 'absolute',
+    top: '10px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    border: '1px solid #ccc',
+    padding: '10px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    width: '250px',
+    zIndex: '999',
+    borderRadius: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    visibility: 'hidden', // Initially hidden
+  },
+  previewImage: {
+    width: '80px',
+    height: '80px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    marginTop: '10px',
+  },
+  previewText: {
+    fontSize: '1.2em',
+    textAlign: 'center',
+  },
 };
 
 function Home() {
   const [data, setData] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     fetch(endpoints.home, {
@@ -56,19 +85,20 @@ function Home() {
   return data ? (
     <Fade>
       <div style={styles.mainContainer}>
-        {/* Adjust the name size based on screen width */}
+        {/* Name Section */}
         <h1
           style={{
             ...styles.nameStyle,
             fontSize: window.innerWidth < 768 ? '3em' : '5em',
             ...(data?.name ? styles.nameGlowStyle : {}),
           }}
-          onMouseEnter={(e) => e.target.style.textShadow = styles.nameGlowStyle.textShadow}
-          onMouseLeave={(e) => e.target.style.textShadow = 'none'} // Remove glow on hover out
+          onMouseEnter={() => setIsHovered(true)} // Show preview on hover
+          onMouseLeave={() => setIsHovered(false)} // Hide preview on hover out
         >
           {data?.name}
         </h1>
 
+        {/* Typewriter Effect */}
         <div style={styles.typewriterContainer}>
           <h2 style={styles.inlineText}>I&apos;m&nbsp;</h2>
           <Typewriter
@@ -81,7 +111,31 @@ function Home() {
           />
         </div>
 
+        {/* Social Section */}
         <Social />
+
+        {/* Miniature Preview for the Home Section */}
+        {isHovered && (
+          <div style={styles.miniPreview}>
+            <h1 style={styles.previewText}>{data?.name}</h1>
+            <div style={styles.typewriterContainer}>
+              <h2 style={styles.previewText}>I&apos;m&nbsp;</h2>
+              <Typewriter
+                options={{
+                  loop: true,
+                  autoStart: true,
+                  strings: data?.roles,
+                }}
+                style={styles.previewText}
+              />
+            </div>
+            <img
+              src={data?.imageSource}
+              alt="preview-profile"
+              style={styles.previewImage}
+            />
+          </div>
+        )}
       </div>
     </Fade>
   ) : <FallbackSpinner />;
