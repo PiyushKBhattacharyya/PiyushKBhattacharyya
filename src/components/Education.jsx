@@ -30,7 +30,7 @@ const styles = {
   },
 };
 
-function Experience({ header }) {
+function Education({ header }) {
   const theme = useContext(ThemeContext);
   const [data, setData] = useState(null);
   const [timelineMode, setTimelineMode] = useState('left');
