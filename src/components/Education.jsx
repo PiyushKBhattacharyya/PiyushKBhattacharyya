@@ -8,7 +8,7 @@ import Fade from 'react-reveal';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
-import '../css/experience.css';
+import '../css/education.css';
 
 const styles = {
   ulStyle: {
@@ -139,8 +139,8 @@ function Experience({ header }) {
   );
 }
 
-Experience.propTypes = {
+Education.propTypes = {
   header: PropTypes.string.isRequired,
 };
 
-export default Experience;
+export default Education;
