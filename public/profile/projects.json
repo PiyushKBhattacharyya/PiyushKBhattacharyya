@@ -32,6 +32,38 @@
                 "Medical Imaging",
                 "Deep Learning"
             ]
+        },
+        {
+            "title": "Automatic Machine Learning",
+            "bodyText": "- Built an AutoML system for automated feature selection, model tuning, and performance evaluation.\n- Deployed an interactive AI-driven dashboard for real-time model visualization.",
+            "links": [
+                {
+                    "text": "Live Preview",
+                    "href": "https://automl.streamlit.app/"
+                },
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/PiyushKBhattacharyya/Brain-Tumor-Segmentation"
+                }
+            ],
+            "tags": [
+                "Machine Learning",
+                "Streamlit"
+            ]
+        },
+        {
+            "title": "Featureless Cloud Point Registration",
+            "bodyText": "- Developed a featureless point cloud registration pipeline using Poisson disk sampling and ICP on Model 10 dataset",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/PiyushKBhattacharyya/Featureless-Point-Cloud-Registration"
+                }
+            ],
+            "tags": [
+                "Point Cloud Registration",
+                "Point Clouds"
+            ]
         }
     ]
 }
