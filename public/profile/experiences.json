@@ -2,7 +2,7 @@
     "experiences": [
         {
             "title": "AIOT Research Intern",
-            "subtitle": "<a href='https://nielit.gov.in/'> NIELIT-India</a>",
+            "subtitle": "NIELIT",
             "workType": "Internship",
             "workDescription": [
                 "Completed an Academic Internship at the National Institute of Electronics and Information Technology (NIELIT),", 
@@ -16,7 +16,8 @@
         },
         {
             "title": "App Developer Apprenticeship",
-            "subtitle": "<a href='https://www.nic.in/'> NIELIT-India</a>",
+            "subtitle": "NIC",
+            
             "workType": "Apprenticeship",
             "workDescription": [
                 "Completed a six-week training program on Android App Development organized by the National Informatics Centre (NIC), Assam State Centre", 
