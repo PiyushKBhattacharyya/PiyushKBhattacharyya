@@ -4,6 +4,7 @@ import { useState, useEffect, forwardRef } from "react";
 import { useCircleEffects } from "../components/effects"; 
 import Link from "next/link";
 import "../styles/effects.css"; 
+import Image from "next/image";
 
 const projects = [
   { 
@@ -150,7 +151,7 @@ export const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
                       rel="noopener noreferrer"
                       className="mt-4 inline-block"
                     >
-                      <img 
+                      <Image 
                         src="/assets/images/github.png" 
                         alt="GitHub" 
                         className="mt-4 w-10 h-10"

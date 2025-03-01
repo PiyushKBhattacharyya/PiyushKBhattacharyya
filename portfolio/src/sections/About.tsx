@@ -73,7 +73,7 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
         <div className="font-serif max-w-3xl mx-auto relative z-10">
           <h2 className="text-5xl font-extrabold text-shadow-lg mb-6">About Me</h2>
           <p className="font-sans text-lg md:text-xl text-white/90 leading-relaxed mb-8">
-            I&apos;m{" "}
+            I am 
             <span className="text-yellow-400">Piyush Kaushik Bhattacharyya</span>, a B.Tech
             undergraduate at KIIT, specializing in{" "}
             <span className="text-yellow-400">Artificial Intelligence</span> and{" "}
