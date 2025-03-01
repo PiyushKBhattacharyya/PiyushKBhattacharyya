@@ -173,14 +173,6 @@ export const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
           );
         })}
       </div>
-      {/* Link to Contact Page */}
-      <div className="flex justify-center mt-[calc(50vh+50px)]">
-        <Link href="#contact">
-          <button className="font-serif bg-yellow-400 text-black py-3 px-8 text-xl font-semibold rounded-lg hover:bg-yellow-500 transition-all z-2">
-            Contact
-          </button>
-        </Link>
-      </div>
     </div>
   );
 });
