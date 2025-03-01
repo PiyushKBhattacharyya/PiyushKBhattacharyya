@@ -17,7 +17,6 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 - **Suricata, Zeek, Filebeat**
 - **Chart.js, JavaScript**
 - **Linux, Git, Docker**
-- **AMD GPU Optimization for AI Training**
 
 ## 📫 Get in Touch
 - **LinkedIn**: [Piyush Kaushik Bhattacharyya](https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/)
