@@ -21,7 +21,6 @@ const arrowSVG = (
 );
 
 const About = forwardRef<HTMLDivElement>((props, ref) => {
-  About.displayName = "About";
   const { circles } = useCircleEffects();
 
   const skillsList = [
@@ -158,5 +157,5 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
     </div>
   );
 });
-
+About.displayName = "About";
 export default About;

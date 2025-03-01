@@ -35,7 +35,7 @@ const projects = [
 ];
 
 const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
-  ProjectSection.displayName = "About";
+
   const [isMounted, setIsMounted] = useState(false);
   const { circles, mousePos } = useCircleEffects();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -178,5 +178,5 @@ const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
     </div>
   );
 });
-
+ProjectSection.displayName = "Project";
 export default ProjectSection;
