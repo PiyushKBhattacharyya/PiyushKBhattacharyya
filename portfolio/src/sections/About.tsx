@@ -5,6 +5,7 @@ import { useCircleEffects } from "../components/effects";
 import "../styles/effects.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const arrowSVG = (
   <svg
@@ -20,6 +21,7 @@ const arrowSVG = (
 );
 
 const About = forwardRef<HTMLDivElement>((props, ref) => {
+  About.displayName = "About";
   const { circles } = useCircleEffects();
 
   const skillsList = [
@@ -71,7 +73,7 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
         <div className="font-serif max-w-3xl mx-auto relative z-10">
           <h2 className="text-5xl font-extrabold text-shadow-lg mb-6">About Me</h2>
           <p className="font-sans text-lg md:text-xl text-white/90 leading-relaxed mb-8">
-            I'm{" "}
+            I&apos;m{" "}
             <span className="text-yellow-400">Piyush Kaushik Bhattacharyya</span>, a B.Tech
             undergraduate at KIIT, specializing in{" "}
             <span className="text-yellow-400">Artificial Intelligence</span> and{" "}
@@ -111,7 +113,7 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
               <div className="transform -rotate-90">
                 <h3 className="font-sans text-lg font-semibold text-white">Awards</h3>
                 <p className="font-sans text-white mt-2">🏆 Best Paper for NICEDT-2025 Track 6</p>
-                <img
+                <Image
                   src="/assets/images/certificate.jpg"
                   alt="NICEDT-2025 Certificate"
                   className="w-full mt-2 rounded-md"
