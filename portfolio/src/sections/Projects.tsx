@@ -4,7 +4,6 @@ import { useState, useEffect, forwardRef } from "react";
 import { useCircleEffects } from "../components/effects"; 
 import Link from "next/link";
 import "../styles/effects.css"; 
-import Image from "next/image";
 
 const projects = [
   { 
@@ -34,8 +33,7 @@ const projects = [
   },
 ];
 
-const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
-
+export const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [isMounted, setIsMounted] = useState(false);
   const { circles, mousePos } = useCircleEffects();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -152,7 +150,7 @@ const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
                       rel="noopener noreferrer"
                       className="mt-4 inline-block"
                     >
-                      <Image
+                      <img 
                         src="/assets/images/github.png" 
                         alt="GitHub" 
                         className="mt-4 w-10 h-10"
@@ -178,5 +176,3 @@ const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
     </div>
   );
 });
-ProjectSection.displayName = "Project";
-export default ProjectSection;
