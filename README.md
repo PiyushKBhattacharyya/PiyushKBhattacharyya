@@ -14,7 +14,6 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 - **Android Development**
 
 ### **Tools & Platforms**
-- **Suricata, Zeek, Filebeat**
 - **Chart.js, JavaScript**
 - **Linux, Git, Docker**
 
