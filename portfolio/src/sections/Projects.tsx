@@ -176,3 +176,5 @@ export const ProjectSection = forwardRef<HTMLDivElement>((props, ref) => {
     </div>
   );
 });
+
+ProjectSection.displayName = "ProjectSection"

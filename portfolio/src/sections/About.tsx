@@ -158,5 +158,5 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
     </div>
   );
 });
-
+About.displayName = "About";
 export default About;
