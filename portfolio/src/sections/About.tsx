@@ -27,6 +27,8 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
   const skillsList = [
     "Deep Learning",
     "Computer Vision",
+    "Docker",
+    "Kubernetes",
     "IoT",
     "NLP",
     "Edge AI",
