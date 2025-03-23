@@ -14,11 +14,11 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 - **Android Development**
 
 ### **Tools & Platforms**
-- **Chart.js, JavaScript**
 - **Linux, Git, Docker**
 
 ## 📫 Get in Touch
 - **LinkedIn**: [Piyush Kaushik Bhattacharyya](https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/)
 - **Email**: piyushbhattacharyya@gmail.com
+- **Portfolio**: www.piyushkaushikbhattacharyya.tech
 
 💙 **Let's connect and build something awesome together!** 🚀
