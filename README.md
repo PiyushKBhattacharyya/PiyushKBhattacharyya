@@ -9,9 +9,10 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 
 ## 🛠️ Tech Stack
 ### **Languages & Frameworks**
-- **Python, Java, JavaScript**
+- **Python, Java, JavaScript, C#**
 - **TensorFlow, PyTorch, OpenCV, FastAPI**
 - **Android Development**
+- **.NET Framework, EF Core**
 
 ### **Tools & Platforms**
 - **Linux, Git, Docker**
