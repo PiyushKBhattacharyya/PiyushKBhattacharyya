@@ -22,4 +22,4 @@ I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learnin
 - **Email**: piyushbhattacharyya@gmail.com
 - **Portfolio**: www.piyushkaushikbhattacharyya.tech
 
-💙 **Let's connect and build something awesome together!** 🚀
+**Let's connect and build something awesome together!** 🚀
