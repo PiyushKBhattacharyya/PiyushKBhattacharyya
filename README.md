@@ -1,25 +1,37 @@
-# Hi there! 👋 I'm Piyush Kaushik Bhattacharyya
+# 👋 Hi, I'm Piyush Kaushik Bhattacharyya  
 
-## 🚀 About Me
-I'm a **BTech undergraduate student at KIIT**, passionate about AI, deep learning, ML, and IoT.
-## 💡 Projects
-- **Multiclass Arrhythmia Detection** using 1D-CNN-BiLSTM 📊
-- **Brain-Tumor-Segmentatiom** using UNet
-- **Signature-based Network Intrusion Detection System** with Suricata & Zeek 🔐
+## 🚀 About Me  
+I’m a **B.Tech undergraduate at KIIT University**, passionate about building intelligent systems that combine **AI, ML, IoT, and full-stack development**.  
+I love solving real-world problems through **scalable, production-ready software** and experimenting with cutting-edge research in deep learning.  
 
-## 🛠️ Tech Stack
-### **Languages & Frameworks**
-- **Python, Java, JavaScript, C#**
-- **TensorFlow, PyTorch, OpenCV, FastAPI**
-- **Android Development**
-- **.NET Framework, EF Core**
+---
 
-### **Tools & Platforms**
-- **Linux, Git, Docker**
+## 💡 Featured Projects  
+- 🫀 **Multiclass Arrhythmia Detection** → 1D-CNN + BiLSTM for ECG classification  
+- 🧠 **Brain Tumor Segmentation** → Medical image segmentation with UNet  
+- 🔐 **Network Intrusion Detection System** → Signature-based IDS using **Suricata & Zeek**  
+- 📘 **PlanPilot (VSCode Extension)** → AI-powered project planner built in **TypeScript + Gemini AI**  
 
-## 📫 Get in Touch
-- **LinkedIn**: [Piyush Kaushik Bhattacharyya](https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/)
-- **Email**: piyushbhattacharyya@gmail.com
-- **Portfolio**: www.piyushkaushikbhattacharyya.tech
+---
 
-**Let's connect and build something awesome together!** 🚀
+## 🛠️ Tech Stack  
+
+### **Languages & Frameworks**  
+- **TypeScript, Python, Java, JavaScript, C#**  
+- **TensorFlow, PyTorch, OpenCV, FastAPI, .NET Core, EF Core**  
+- **Android Development**  
+
+### **Tools & Platforms**  
+- **Linux, Git/GitHub, Docker, VSCode, Jupyter**  
+
+---
+
+## 📫 Connect with Me  
+- 🔗 **LinkedIn**: [Piyush Kaushik Bhattacharyya](https://www.linkedin.com/in/piyush-bhattacharyya-0b8a03131/)  
+- 📧 **Email**: piyushbhattacharyya@gmail.com  
+- 🌐 **Portfolio**: [piyushkaushikbhattacharyya.tech](https://www.piyushkaushikbhattacharyya.tech)  
+
+---
+
+✨ Always open to collaborations in **AI, software engineering, and open-source projects**.  
+**Let’s connect and build something impactful together! 🚀**
