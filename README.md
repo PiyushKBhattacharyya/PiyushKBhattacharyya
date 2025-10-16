@@ -6,14 +6,6 @@ I love solving real-world problems through **scalable, production-ready software
 
 ---
 
-## 💡 Featured Projects  
-- 🫀 **Multiclass Arrhythmia Detection** → 1D-CNN + BiLSTM for ECG classification  
-- 🧠 **Brain Tumor Segmentation** → Medical image segmentation with UNet  
-- 🔐 **Network Intrusion Detection System** → Signature-based IDS using **Suricata & Zeek**  
-- 📘 **PlanPilot (VSCode Extension)** → AI-powered project planner built in **TypeScript + Gemini AI**  
-
----
-
 ## 🛠️ Tech Stack  
 
 ### **Languages & Frameworks**  
